@@ -1,10 +1,10 @@
 const{db, Student}=require('./inserting entities')
-
+const Op= Sequelize.Op
 const task= async()=>{
 try{
     await db.sync()
     const students=await Student.findAll({
-        where: {age: {$gt: 13}}
+        where: {age:{[Op.gt]:13}}
     })
     students.forEach(s => {
         console.log(`
