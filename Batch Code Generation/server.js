@@ -49,7 +49,16 @@ app.post('/batchcode',async(req,res)=>{
     }
     res.send(batchcode)
 })
+app.get('/batches',async (req,res)=>{
+    try {
+        const batches=await Batch.findAll()
+        // console.log(batches)
+        res.render('batches',{batches})
 
+    } catch (e) {
+    console.error(e)        
+    }
+})
 
 module.exports={
     app
