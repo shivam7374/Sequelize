@@ -4,7 +4,7 @@ const task= async()=>{
 try{
     await db.sync()
     const students=await Student.findAll({
-        where: {age: 14}
+        where: {age: {$gt: 13}}
     })
     students.forEach(s => {
         console.log(`
