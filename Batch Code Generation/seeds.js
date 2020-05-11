@@ -13,6 +13,24 @@ const seed= async()=>{
         ],{
             ignoreDuplicates:true
         })
+        await Season.bulkCreate([
+            {id:'S' ,name:'Summer'},
+            {id:'F' ,name:'Fall'},
+            {id:'W' ,name:'Winter'},
+            {id:'P' ,name:'Spring'},
+            
+        ],{
+            ignoreDuplicates:true
+        })
+        await Course.bulkCreate([
+            {id:'LP' ,name:'LaunchPad'},
+            {id:'CX' ,name:'Crux'},
+            {id:'IB' ,name:'Interview Bootcamp'},
+            {id:'AD' ,name:'Android Development'},
+            {id:'WD' ,name:'Web Development(Node Js)'},
+        ],{
+            ignoreDuplicates:true
+        })
 
 
     }catch(e){
